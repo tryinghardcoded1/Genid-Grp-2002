@@ -105,10 +105,10 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Dummy Listing 1 */}
-            <div className="bg-charcoal-900 border border-charcoal-800 group cursor-pointer overflow-hidden shadow-lg hover:border-gold-500 transition-all">
+            <div className="bg-charcoal-900 border border-charcoal-800 group cursor-pointer overflow-hidden shadow-lg hover:border-gold-500 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:-translate-y-2 transition-all duration-300">
               <div className="relative h-64 overflow-hidden border-b border-charcoal-800">
                 <div className="absolute top-4 left-4 z-10 bg-white px-3 py-1 text-xs font-bold uppercase tracking-wider text-charcoal-900 shadow">Condo for sale</div>
-                <img src="https://ap.rdcpix.com/6ad15712d0bab259c7e3b3b66dfa6b31l-m1458518409rd-w1280_h960.webp" alt="761 Avenue A Apt B2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
+                <img src="https://ap.rdcpix.com/6ad15712d0bab259c7e3b3b66dfa6b31l-m1458518409rd-w1280_h960.webp" alt="761 Avenue A Apt B2" className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
               </div>
               <div className="p-6">
                 <p className="text-2xl font-serif text-gold-500 mb-2">$179,000</p>
@@ -123,10 +123,10 @@ export default function Home() {
             </div>
 
             {/* Dummy Listing 2 */}
-            <div className="bg-charcoal-900 border border-charcoal-800 group cursor-pointer overflow-hidden shadow-lg hover:border-gold-500 transition-all">
+            <div className="bg-charcoal-900 border border-charcoal-800 group cursor-pointer overflow-hidden shadow-lg hover:border-gold-500 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:-translate-y-2 transition-all duration-300">
               <div className="relative h-64 overflow-hidden border-b border-charcoal-800">
                 <div className="absolute top-4 left-4 z-10 bg-black text-white px-3 py-1 text-xs font-bold uppercase tracking-wider shadow border border-charcoal-800">Luxury</div>
-                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop" alt="Luxury home in Paramus NJ" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop" alt="Luxury home in Paramus NJ" className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
               </div>
               <div className="p-6">
                 <p className="text-2xl font-serif text-gold-500 mb-2">$2,850,000</p>
@@ -141,10 +141,10 @@ export default function Home() {
             </div>
 
             {/* Dummy Listing 3 */}
-            <div className="bg-charcoal-900 border border-charcoal-800 group cursor-pointer overflow-hidden shadow-lg hover:border-gold-500 transition-all">
+            <div className="bg-charcoal-900 border border-charcoal-800 group cursor-pointer overflow-hidden shadow-lg hover:border-gold-500 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:-translate-y-2 transition-all duration-300">
               <div className="relative h-64 overflow-hidden border-b border-charcoal-800">
                 <div className="absolute top-4 left-4 z-10 bg-gold-500 text-black px-3 py-1 text-xs font-bold uppercase tracking-wider shadow">Open House</div>
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="House for sale in Nutley NJ" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="House for sale in Nutley NJ" className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
               </div>
               <div className="p-6">
                 <p className="text-2xl font-serif text-gold-500 mb-2">$850,000</p>
@@ -201,13 +201,18 @@ export default function Home() {
           <h2 className="text-3xl md:text-5xl font-serif text-[#F5F5F5] mb-4">Explore Northern NJ</h2>
           <p className="text-gray-400 max-w-2xl mx-auto mb-16">Expertise in every zip code. Discover the neighborhoods we dominate.</p>
           
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
-            {['Clifton', 'Paramus', 'Jersey City', 'Montclair', 'Nutley'].map((town) => (
-              <div key={town} className="relative h-64 group overflow-hidden cursor-pointer rounded-lg border border-charcoal-800">
-                {/* Fallback pattern for towns */}
-                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/30 transition-colors z-10"></div>
-                <img src={`https://images.unsplash.com/photo-1549516641-5501865910fa?q=80&w=800&auto=format&fit=crop`} alt={`${town} Real Estate`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-100" />
-                <h3 className="absolute inset-0 z-20 flex items-center justify-center text-white text-xl uppercase tracking-widest font-semibold text-shadow-sm">{town}</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[
+              { name: 'Montclair', image: 'https://www.daisylimo.com/blog/wp-content/uploads/2023/02/image.png' },
+              { name: 'Jersey City', image: 'https://i.ytimg.com/vi/ZmQKTHBjsBM/maxresdefault.jpg' },
+              { name: 'Paramus', image: 'https://www.paramusborough.gov/ImageRepository/Document?documentID=1301' },
+              { name: 'Clifton', image: 'https://i.ytimg.com/vi/cO4SSBtVXug/maxresdefault.jpg' },
+              { name: 'Nutley', image: 'https://photos.zillowstatic.com/fp/09a7a077f68877b68a7e7d0b7898b31e-cc_ft_960.jpg' }
+            ].map((town) => (
+              <div key={town.name} className="relative h-64 group overflow-hidden cursor-pointer rounded-lg border border-charcoal-800">
+                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/30 transition-colors z-10 duration-300"></div>
+                <img src={town.image} alt={`${town.name} Real Estate`} className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-100" />
+                <h3 className="absolute inset-0 z-20 flex items-center justify-center text-white text-xl uppercase tracking-widest font-semibold text-shadow-sm">{town.name}</h3>
               </div>
             ))}
           </div>
