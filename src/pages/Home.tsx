@@ -39,36 +39,20 @@ export default function Home() {
             </p>
           </motion.div>
 
-          {/* Search Bar - Glassmorphism */}
+          {/* Virtual House Tour CTA */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-[#0A0A0A]/40 backdrop-blur-md p-4 md:p-2 rounded-xl shadow-2xl border border-charcoal-800 max-w-4xl mx-auto"
+            className="flex justify-center"
           >
-            <div className="flex flex-col md:flex-row gap-2">
-              <div className="flex-1 flex items-center bg-charcoal-900 border border-charcoal-800 rounded flex-shrink-0 px-4 py-3 md:py-0">
-                <MapPin className="text-gold-500 w-5 h-5 mr-3 flex-shrink-0" />
-                <input 
-                  type="text" 
-                  placeholder="City, Neighborhood, or Zip" 
-                  className="w-full text-[#F5F5F5] bg-transparent outline-none placeholder-gray-400 font-medium"
-                />
-              </div>
-              <div className="md:w-1/4 flex-shrink-0">
-                <select className="w-full bg-charcoal-900 text-[#F5F5F5] border border-charcoal-800 rounded px-4 py-3 md:py-4 outline-none font-medium appearance-none cursor-pointer h-full">
-                  <option className="bg-charcoal-900">Property Type</option>
-                  <option className="bg-charcoal-900">Single Family</option>
-                  <option className="bg-charcoal-900">Multi-Family</option>
-                  <option className="bg-charcoal-900">Condo/Townhouse</option>
-                  <option className="bg-charcoal-900">Commercial</option>
-                </select>
-              </div>
-              <button className="border border-gold-500 hover:bg-gold-500 text-gold-500 hover:text-black font-bold py-3 md:py-4 px-8 rounded flex items-center justify-center transition-colors uppercase tracking-widest text-[11px] h-full flex-shrink-0 shadow-lg">
-                <Search className="w-4 h-4 mr-2" />
-                Search
-              </button>
-            </div>
+            <Link 
+              to="/live-house-tour"
+              className="bg-gold-500 hover:bg-gold-600 text-black font-bold py-4 px-10 rounded flex items-center justify-center transition-all uppercase tracking-widest text-[13px] shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] hover:-translate-y-1"
+            >
+              <Eye className="w-5 h-5 mr-3" />
+              Virtual House Tour
+            </Link>
           </motion.div>
         </div>
       </section>

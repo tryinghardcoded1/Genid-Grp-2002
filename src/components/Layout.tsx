@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import clsx from 'clsx';
+import ChatBot from './ChatBot';
 
 function Dropdown({ title, items }: { title: string; items: { label: string; to: string }[] }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -148,6 +149,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link to="#" className="hover:text-gray-400">Neighborhood Data</Link>
         </div>
       </footer>
+      <ChatBot />
     </div>
   );
 }

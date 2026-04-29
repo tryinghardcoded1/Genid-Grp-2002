@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Calendar, Download, Eye } from 'lucide-react';
 
 export default function LiveHouseTour() {
+  useEffect(() => {
+    const pano_iframe_name = "tour-embeded";
+    const handleDeviceMotion = (e: DeviceMotionEvent) => {
+      const iframe = document.getElementById(pano_iframe_name) as HTMLIFrameElement;
+      if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage({
+          type: "devicemotion",
+          deviceMotionEvent: {
+            acceleration: { x: e.acceleration?.x, y: e.acceleration?.y, z: e.acceleration?.z },
+            accelerationIncludingGravity: { x: e.accelerationIncludingGravity?.x, y: e.accelerationIncludingGravity?.y, z: e.accelerationIncludingGravity?.z },
+            rotationRate: { alpha: e.rotationRate?.alpha, beta: e.rotationRate?.beta, gamma: e.rotationRate?.gamma },
+            interval: e.interval,
+            timeStamp: e.timeStamp
+          }
+        }, "*");
+      }
+    };
+    window.addEventListener("devicemotion", handleDeviceMotion);
+    return () => window.removeEventListener("devicemotion", handleDeviceMotion);
+  }, []);
+
   return (
     <>
       <Helmet>
